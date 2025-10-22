@@ -1,25 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello World</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      color: #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lex Protecta | IP & Innovation Law Blog</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enables dark mode based on 'dark' class on <html>
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4f46e5', // Indigo-600
+                        'secondary': '#6b7280', // Gray-500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for professional feel */
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .prose-custom {
+            line-height: 1.8;
+        }
+    </style>
 </head>
-<body>
-  <h1>Hello, World!</h1>
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition-colors duration-300 font-sans">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Site Title -->
+                <a href="#" class="text-3xl font-extrabold text-primary tracking-tight">
+                    Lex <span class="text-gray-800 dark:text-white">Protecta</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-lg font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition duration-150">Blog</a>
+                    <a href="#about" class="text-lg font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition duration-150">About</a>
+                    <a href="#contact" class="text-lg font-medium text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition duration-150">Contact</a>
+                </nav>
+                
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle Dark Mode" class="p-2 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 transition duration-150">
+                    <!-- Icon placeholder (using SVG for simplicity) -->
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" id="sun-icon"/>
+                        <path class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" id="moon-icon"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-gray-900 dark:text-white mb-4">
+                Navigating the <span class="text-primary">Innovation Economy</span>
+            </h1>
+            <p class="text-xl text-gray-500 dark:text-gray-400 max-w-3xl mx-auto mb-8 prose-custom">
+                Insightful analysis on patent, copyright, and trademark law from an IP professional. Protecting creativity and driving value in a digital world.
+            </p>
+            <a href="#latest-posts" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-lg text-white bg-primary hover:bg-indigo-700 transition duration-150 transform hover:scale-105">
+                Explore the Latest Insights &rarr;
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Blog Content Section -->
+    <main id="latest-posts" class="py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12 border-b-2 border-primary pb-2 inline-block">Recent Articles</h2>
+            
+            <!-- Posts Grid -->
+            <div class="grid gap-12 lg:grid-cols-3 md:grid-cols-2">
+
+                <!-- Post 1: Patent Law -->
+                <article class="flex flex-col rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition duration-300 card-hover">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+                                Patent Law
+                            </span>
+                            <time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-10-20">October 20, 2025</time>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-primary transition duration-150">
+                            The Shifting Sands of AI-Generated Patents
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 prose-custom mb-4">
+                            Can an algorithm truly be an inventor? We dive into recent court decisions globally and examine how patent offices are grappling with invention created by artificial intelligence tools.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#" class="text-primary font-medium hover:text-indigo-700 dark:hover:text-indigo-400 transition duration-150 flex items-center">
+                            Read Full Article 
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 2: Trademark Law -->
+                <article class="flex flex-col rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition duration-300 card-hover">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-red-100 text-red-800 dark:bg-red-800 dark:text-red-100">
+                                Trademark Law
+                            </span>
+                            <time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-10-15">October 15, 2025</time>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-primary transition duration-150">
+                            Brand Protection in the Metaverse: New Challenges
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 prose-custom mb-4">
+                            The virtual world creates real legal issues. We analyze the emerging need for companies to secure trademark protection for digital goods (NFTs, virtual stores) and their enforcement strategy.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#" class="text-primary font-medium hover:text-indigo-700 dark:hover:text-indigo-400 transition duration-150 flex items-center">
+                            Read Full Article 
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Post 3: Copyright Law -->
+                <article class="flex flex-col rounded-xl overflow-hidden shadow-lg bg-white dark:bg-gray-800 transition duration-300 card-hover">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">
+                                Copyright Law
+                            </span>
+                            <time class="text-sm text-gray-500 dark:text-gray-400" datetime="2025-10-08">October 8, 2025</time>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-primary transition duration-150">
+                            Fair Use in the Age of Generative AI Datasets
+                        </h3>
+                        <p class="text-gray-600 dark:text-gray-400 prose-custom mb-4">
+                            The biggest legal battle of the decade: Is training a large language model on copyrighted work 'transformative' fair use, or is it a massive infringement? We look at recent filings.
+                        </p>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#" class="text-primary font-medium hover:text-indigo-700 dark:hover:text-indigo-400 transition duration-150 flex items-center">
+                            Read Full Article 
+                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    </div>
+                </article>
+                
+            </div>
+            
+            <!-- Call to Action / Archive Button -->
+            <div class="text-center mt-16">
+                <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-primary text-base font-medium rounded-lg text-primary hover:bg-primary hover:text-white dark:border-primary dark:text-primary dark:hover:bg-primary dark:hover:text-white transition duration-150">
+                    View All Archives
+                </a>
+            </div>
+            
+        </div>
+    </main>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 sm:py-20 bg-gray-100 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 border-b-2 border-primary pb-2 inline-block">About the Author</h2>
+            <div class="md:flex md:space-x-12">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <!-- Placeholder for professional headshot -->
+                    <div class="w-full h-64 rounded-xl bg-gray-300 dark:bg-gray-700 flex items-center justify-center shadow-lg">
+                        <span class="text-gray-600 dark:text-gray-400 text-lg">Author Photo Placeholder</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 prose-custom">
+                        Hello, I'm [Your Name], an Intellectual Property lawyer with over ten years of experience navigating the complexities of modern innovation. I founded Lex Protecta to demystify the legal landscape for creators, entrepreneurs, and established businesses alike.
+                    </p>
+                    <p class="text-lg text-gray-700 dark:text-gray-300 prose-custom">
+                        My practice focuses on strategic patent portfolio development, international trademark enforcement, and digital copyright litigation. I write here to share perspectives on landmark cases, legislative changes, and the economic impact of IP on emerging technologies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-8 border-b-2 border-primary pb-2 inline-block">Get In Touch</h2>
+            <div class="max-w-3xl">
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 prose-custom">
+                    While this blog is for informational purposes, I welcome professional inquiries and collaborations. You can reach me directly via email or connect on LinkedIn.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-indigo-700 transition duration-150 transform hover:scale-105 shadow-md">
+                        Email Me
+                    </a>
+                    <a href="[Your LinkedIn Profile URL]" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-lg text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition duration-150 shadow-md">
+                        <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.541-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        Connect on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-950 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 dark:text-gray-500">
+            <p class="text-sm">&copy; 2025 Lex Protecta. All rights reserved. | Site built with GitHub Pages & Tailwind CSS.</p>
+            <p class="text-xs mt-2">Disclaimer: Blog posts provide general information and do not constitute legal advice.</p>
+            <div class="mt-4 flex justify-center space-x-6">
+                <!-- Social Icons -->
+                <a href="[LinkedIn]" target="_blank" class="text-gray-400 hover:text-primary transition duration-150" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.541-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+                <a href="[Twitter/X]" target="_blank" class="text-gray-400 hover:text-primary transition duration-150" aria-label="Twitter">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.791-1.574 2.153-2.72.113.064.23.125.348.187-.821.5-1.737.817-2.723.991-2.793-2.808-7.234-2.808-10.038 0-1.832 1.832-2.31 4.545-1.228 6.784-5.592-.28-10.51-2.96-13.818-7.142-.577.994-.882 2.14-.882 3.328 0 2.302 1.171 4.341 2.951 5.541-1.082-.034-2.108-.346-3.018-.838.001.024.001.047.001.07 0 2.01 1.43 3.69 3.326 4.072-1.298.353-2.67.43-4.073.136.528 1.65 2.19 2.85 4.12 2.895-3.882 3.033-8.774 3.75-13.987 2.655.437.332.868.647 1.297.93 5.922 3.238 13.5 3.344 19.554.27 0-.005 0-.01 0-.015 0-.005 0-.01 0-.015.004-.038 0-.077 0-.115-.12-.08-.242-.158-.363-.238-.484.008-.006.015-.013.023-.019z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Dark Mode Toggle -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlElement = document.documentElement;
+
+        // Check for saved theme preference or default to system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+            sunIcon.classList.add('hidden');
+            moonIcon.classList.remove('hidden');
+        } else {
+            htmlElement.classList.remove('dark');
+            sunIcon.classList.remove('hidden');
+            moonIcon.classList.add('hidden');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (htmlElement.classList.contains('dark')) {
+                // Switch to light mode
+                htmlElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                // Switch to dark mode
+                htmlElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
